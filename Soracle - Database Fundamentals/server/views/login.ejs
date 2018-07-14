@@ -1,0 +1,35 @@
+<% title= 'Login' %>
+
+<% include partials/head %>
+
+<br>
+<br>
+<br>
+<div class="container" style="text-align: center">
+<div class="panel panel-default col-md-8 col-md-offset-2">
+  <div class="panel-heading">
+    <h2>Glad to have ya back!</h2>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="panel-body col-md-4">
+    <form method="post">
+      <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+
+      <span>Email:</span>
+      <input type="text" name="email" style="text-align: center" required=true></br>
+
+      <span>Password:</span>
+      <input type="password" name="password" style="text-align: center" required=true></br>
+      <div>
+      <br>
+      <input type="submit" value="Login!" class="btn btn-primary">
+      <p><br><a href="/register"> Click here to register </p>
+      </div>
+      <% if (locals.error) {%>
+               <p text="text-danger">ERROR: <%= error %> <% } %> </p>
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

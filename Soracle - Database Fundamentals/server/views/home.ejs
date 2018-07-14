@@ -1,0 +1,54 @@
+<% title= 'Login' %>
+
+<% include partials/head %>
+
+<html lang="en">
+<body>
+   <br>
+</body>
+<div class="col-md-4"></div>
+<div class="container col-md-4">
+	<div class="row">
+		<div class="span4 well" style="padding-bottom:10">
+            <form accept-charset="UTF-8" action="" method="POST">
+            <input type="hidden" name="_csrf" value="<%=csrfToken%>">
+                <textarea class="span8 form-control" id="message" style="min-width: 100%" name="tweet"
+                placeholder="This will happen..." rows="3"></textarea>
+                <br>
+                <input class="form-control" id="date" name="date" style="text-align: center" placeholder="on this day..." type="text"/>
+                <br>
+                <button class="btn btn-info center-block" name="submit" onclick=" type="submit">Post Your Prediction</button>
+            </form>
+        </div>
+	</div>
+</div>
+<br><br><br><br><br><br><br><br><br><br><br><br>
+<div class="well container">
+<form>
+    <ul class="list-group">
+    <br>
+    <% for(var i=0; i < posted.length; i++) { %>
+         <li class="list-group-item" ><%= posted[i].username%> posted a prediction for <%= posted[i].date %>:<%= posted[i].tweet %></li>
+    <% } %>
+    </ul>
+    </form>
+</div>
+<p><br><a href="/logout"><center> Click here to Logout </center></p>
+<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+<script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/js/bootstrap-datepicker.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.4.1/css/bootstrap-datepicker3.css"/>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+<script>
+    var date_input=$('input[name="date"]');
+    var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+    var options={
+        format: 'mm/dd/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+    };
+    date_input.datepicker(options);
+</script>

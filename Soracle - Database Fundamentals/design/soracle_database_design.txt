@@ -1,0 +1,85 @@
+Soracle - Winningham & Harron
+//JSON
+{
+  "username": "string",
+  "user_post": [
+    {
+      "post": "string",
+      "date": "date",
+      "time": "time"
+    }
+  ],
+  "users": [
+    {
+      "user_id": "integer",
+      "username": "string",
+      "email": "string",
+      "password": "string"
+    }
+  ]
+}
+
+//JSON Schema
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "/",
+  "type": "object",
+  "properties": {
+    "username": {
+      "id": "username",
+      "type": "string"
+    },
+    "user_post": {
+      "id": "user_post",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "post": {
+            "id": "post",
+            "type": "string"
+          },
+          "date": {
+            "id": "date",
+            "type": "string"
+          },
+          "time": {
+            "id": "time",
+            "type": "string"
+          }
+        }
+      }
+    },
+    "users": {
+      "id": "users",
+      "type": "array",
+      "items": {
+        "id": "0",
+        "type": "object",
+        "properties": {
+          "user_id": {
+            "id": "user_id",
+            "type": "string"
+          },
+          "username": {
+            "id": "username",
+            "type": "string"
+          },
+          "email": {
+            "id": "email",
+            "type": "string"
+          },
+          "password": {
+            "id": "password",
+            "type": "string"
+          }
+        }
+      }
+    }
+  },
+  "required": [
+    "username",
+    "users"
+  ]
+}

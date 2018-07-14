@@ -1,0 +1,40 @@
+<!-- index page -->
+
+<% title= 'Profile' %>
+
+<% include partials/head %>
+
+<% if (user.role === "admin") { %>
+  <p>Go to <a href="adminpanel">admin panel</a></p>
+<% } %>
+
+<html lang="en">
+<body>
+   <br>
+   <br>
+   <br>
+</body>
+<div class="container" style="text-align: center">
+<div class="panel panel-default col-md-8 col-md-offset-2">
+  <div class="panel-heading">
+    <h2>Check Me Out</h2>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="panel-body col-md-4">
+    <h3>Welcome home, <%= user.username %> </h3>
+    <p>First Name: <%= user.userdata.firstname %></p>
+    <p>Last Name:  <%= user.userdata.lastname %></p>
+    <p>Email:      <%= user.email %></p>
+    <a href="/home">Click here to see the future (maybe)</a>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+</div>
+  <div class="container"><center>
+  <form method="post">
+    <input type="hidden" name="_csrf", value="<%=csrfToken%>"/>
+    <span>Change username to: </span> <input type="text" name="newusername" style="text-align: center" required=true><input type="submit" value="Change" style="text-align: center"></br>
+    <span>Delete Account?      .</span><input type="button"value="Yes" onclick="location.href='/users/<%= user.username %>/delete'">
+  </form>
+  </center></div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

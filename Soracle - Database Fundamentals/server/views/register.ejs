@@ -1,0 +1,61 @@
+<!-- register page -->
+
+<% // title is a paramater used by base to set the page title %>
+<% title= 'Create an Account' %>
+<% include partials/head %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+    <link rel="icon" href="../../favicon.ico">
+    <title>Welcome to Soracle</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../../dist/css/bootstrap.min.css" rel="stylesheet">
+  </head>
+<body>
+   <br>
+   <br>
+   <br>
+</body>
+<div class="container" style="text-align: center">
+<div class="panel panel-default container col-md-8 col-md-offset-2">
+  <div class="panel-heading">
+    <h2>"Wow, I'm so glad I made an account!" -Future You</h2>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="panel-body col-md-4">
+    <form method="post">
+      <input type="hidden" name="_csrf", value="<%=csrfToken%>"/>
+
+      <span>Username:</span>
+      <input type="text" name="username" required=true/></br>
+
+      <span>First Name:</span>
+      <input type="text" name="firstname" required=true/></br>
+
+      <span>Last Name:</span>
+      <input type="text" name="lastname" required=true/></br>
+
+      <span>Email:</span>
+      <input type="email" name="email" required=true/></br>
+
+      <span>Password:</span>
+      <input type="password" name="password" required=true/></br>
+
+      <br>
+
+      <input class="btn btn-primary" type="submit"/>
+      <% if (locals.error) {%>
+           <p>ERROR: <%= error %></p>
+      <% } %>
+
+      <% console.log('Token: ' + csrfToken) %>
+    </form>
+  </div>
+  <div class="col-md-4"></div>
+</div>
+</div>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>

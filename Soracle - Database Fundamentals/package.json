@@ -1,0 +1,27 @@
+{
+  "name": "auth",
+  "version": "1.0.0",
+  "description": "Soracle Database.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "author": "Caleb Winningham and Nick Harron",
+  "dependencies": {
+    "bcryptjs": "^2.0.2",
+    "body-parser": "^1.9.0",
+    "client-sessions": "^0.7.0",
+    "csurf": "^1.6.1",
+    "ejs": "^2.4.1",
+    "express": "^4.9.7",
+    "mongoose": "^4.0.0",
+    "jquery": "^2.2.3",
+    "bootstrap": "^3.3.6",
+    "mongodb": "^2.1.18",
+    "nodemon": "^1.9.2"
+  },
+  "license": "AFL-3.0",
+  "repository": "https://bitbucket.org/Winningham_Caleb/usafa_cs364_2016_final.git"
+}
+
+
